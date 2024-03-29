@@ -52,7 +52,7 @@ async def index():
         {% if names %}
         <ul>
             {% for name in names %}
-                <li><a href="{{ name }}.html">{{ name }}</a></li>
+                <li><a href="{{ name|e }}.html">{{ name|e }}</a></li>
             {% endfor %}
         </ul>
         {% else %}
