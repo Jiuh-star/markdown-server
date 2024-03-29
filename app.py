@@ -27,7 +27,7 @@ async def hot_reload():
                 continue
 
             if change == Change.deleted and file.parent.samefile(MARKDOWN_DIR):
-                del markdowns[file.name.removesuffix(".md")]
+                markdowns.pop(file.name.removesuffix(".md"), None)
                 continue
 
             with open(file) as f:
